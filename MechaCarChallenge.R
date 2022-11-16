@@ -27,3 +27,14 @@ lot_summary <- suspension_df %>% group_by(Manufacturing_Lot) %>% summarize(Mean=
                                                                           Variance=var(PSI),
                                                                           SD=sd(PSI),
                                                                           .groups = 'keep')
+
+
+## deliverable 3
+
+t.test(suspension_df$PSI, mu=1500)
+
+t.test(PSI ~ 1, data=suspension_df, mu=1500, subset = Manufacturing_Lot == "Lot1")
+
+t.test(PSI ~ 1, data=suspension_df, mu=1500, subset = Manufacturing_Lot == "Lot2")
+
+t.test(PSI ~ 1, data=suspension_df, mu=1500, subset = Manufacturing_Lot == "Lot3")
